@@ -6,6 +6,9 @@
 }
 
 @layer base {
+  * {
+    background-color: 'red';
+  }
   html {
     font-family: var(--font-sans);
   }
