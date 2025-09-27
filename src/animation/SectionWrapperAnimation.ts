@@ -1,6 +1,6 @@
 import type { Variants } from 'motion';
 
-export const OnRenderAnimation: Variants = {
+export const SectionWrapperAnimation: Variants = {
   initial: {
     opacity: 0,
   },

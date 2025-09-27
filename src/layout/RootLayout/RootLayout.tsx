@@ -1,18 +1,19 @@
 import { NavigationBar } from '@/components/NavigationBar';
-import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 import { NavLinks } from '@/constants';
 import { FooterSection } from '@/containers';
 import { Outlet } from 'react-router';
 
 const RootLayout = () => {
   return (
-    <main className="relative">
-      <NavigationBar showDot links={NavLinks} />
-      <ThemeToggle />
+    <main className="">
+      <div className="fixed z-50 left-0 top-0  py-4 w-full backdrop-blur-3xl flex justify-center">
+        <NavigationBar showDot links={NavLinks} />
+        {/* <ThemeToggle /> */}
+      </div>
 
       <Outlet />
 
-      <div  className='border-1 border-gray-800'/>
+      <div className="border-1 border-white/30" />
 
       <FooterSection />
     </main>

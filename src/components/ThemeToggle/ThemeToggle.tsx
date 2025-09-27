@@ -1,5 +1,6 @@
 import { useTheme } from '@/hooks';
 import { memo, useCallback, useEffect } from 'react';
+import { FluxButton } from '../FluxButton';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
 
@@ -11,18 +12,17 @@ const ThemeToggle = memo(() => {
     document.body.classList.add(theme);
   }, [theme]);
 
-  const toggletheme = useCallback(() => {
+  const toggleTheme = useCallback(() => {
     setTheme((theme) => (theme === 'light' ? 'dark' : 'light'));
   }, [setTheme]);
 
+  const topLabel = theme === 'light' ? 'Light' : 'Dark';
+  const bottomLabel = theme === 'light' ? 'Dark' : 'Light';
+
   return (
-    <button
-      className="fixed top-10 right-10 cursor-pointer border-2 px-4 rounded-full"
-      onClick={toggletheme}
-      type="button"
-    >
-      {theme === 'light' ? 'light' : 'dark mode'}
-    </button>
+    <div className="absolute border sm:border-0 rounded-full px-2 max-[600px]:top-20 right-5 backdrop-blur-3xl z-50">
+      <FluxButton onClick={toggleTheme} topLabel={topLabel} bottomLabel={bottomLabel} />
+    </div>
   );
 });
 

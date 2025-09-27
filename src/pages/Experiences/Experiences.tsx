@@ -4,7 +4,7 @@ import { SectionWrapper } from '@/containers/SectionWrapper';
 
 const Experiences = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper className="h-dvh">
       <VerticalMileStone milestones={ExperiencesTimeline} />
     </SectionWrapper>
   );

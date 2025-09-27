@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
-  --font-sans: 'GFS Didot', ui-sans-serif, system-ui, sans-serif;
+  --font-didot: 'GFS Didot', ui-sans-serif, system-ui, sans-serif;
+  --font-press-start-2p: 'Press Start 2P', system-ui;
 
-  --color-bg: white;
-  --color-text: black;
-
-  /* dark mode overrides */
-  --color-bg: oklch(98% 0.02 95); /* soft near-white */
-  --color-text: oklch(20% 0.02 250); /* dark grayish */
-  --color-accent: oklch(70% 0.15 250); /* bluish accent */
+  /* --color-bg: oklch(0.9931 0.00347 39.4846);  */
+  --color-bg: oklch(0.1822 0 0);
+  --color-text: oklch(95% 0.02 95);
 }
 
 @layer base {
@@ -25,11 +23,10 @@
     color: var(--color-text);
   }
   html {
-    font-family: var(--font-sans);
+    font-family: var(--font-didot);
   }
   .dark {
-    --color-bg: oklch(15% 0.02 250); /* near black */
-    --color-text: oklch(95% 0.02 95); /* near white */
-    --color-accent: oklch(75% 0.12 300); /* purple accent */
+    --color-bg: oklch(15% 0.02 250);
+    --color-text: oklch(95% 0.02 95);
   }
 }

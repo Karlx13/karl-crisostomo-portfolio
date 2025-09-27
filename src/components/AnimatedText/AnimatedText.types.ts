@@ -1,6 +1,7 @@
 import type { MotionProps } from 'motion/react';
 
 export interface IAnimatedTextProps extends MotionProps {
-  text: string;
+  children: React.ReactNode;
   className?: string;
+  once?: boolean;
 }

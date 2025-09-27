@@ -3,7 +3,7 @@ import type { IVerticalMileStoneProps } from './VerticalMilestone.types';
 import { TimelineCard } from '../TimelineCard';
 import { motion } from 'motion/react';
 import { cn } from '@/utils';
-import { OnRenderTimelineAnimation } from '@/animation';
+import { MileStoneAnimation } from '@/animation';
 
 const VerticalMileStone = memo<IVerticalMileStoneProps>(({ milestones }) => {
   const [selectedTimelime, setSelectedTimeline] = useState<number | null>(null);
@@ -19,7 +19,7 @@ const VerticalMileStone = memo<IVerticalMileStoneProps>(({ milestones }) => {
           const isTimelineSelected = selectedTimelime === milestone.id;
           return (
             <motion.div
-              variants={OnRenderTimelineAnimation}
+              variants={MileStoneAnimation}
               initial="initial"
               animate="enter"
               exit="exit"

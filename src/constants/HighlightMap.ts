@@ -6,5 +6,10 @@ export const HighlightMap: Record<string, string> = {
   'AXA HUMA': 'axa-huma',
   AppBar: 'appbar',
   'AXA PerksBar CMS': 'axa-perksBar-cms',
-  'AIA CMS': 'aia-cms'
+  'AIA CMS': 'aia-cms',
+  AIA: 'aia',
+  'Brick Extreme LLC': 'brick-extreme-llc',
+  'World of Minifigs Builder': 'world-of-minifigs-builder',
+  LEGO: 'lego',
+  NestJS: 'nest-js',
 };
