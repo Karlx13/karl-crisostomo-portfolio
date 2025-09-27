@@ -3,13 +3,33 @@
 
 @theme inline {
   --font-sans: 'GFS Didot', ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: white;
+  --color-text: black;
+
+  /* dark mode overrides */
+  --color-bg: oklch(98% 0.02 95); /* soft near-white */
+  --color-text: oklch(20% 0.02 250); /* dark grayish */
+  --color-accent: oklch(70% 0.15 250); /* bluish accent */
 }
 
 @layer base {
-  * {
-    background-color: 'red';
+  body {
+    /* height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+
+    background-color: var(--color-bg);
+    color: var(--color-text);
   }
   html {
     font-family: var(--font-sans);
+  }
+  .dark {
+    --color-bg: oklch(15% 0.02 250); /* near black */
+    --color-text: oklch(95% 0.02 95); /* near white */
+    --color-accent: oklch(75% 0.12 300); /* purple accent */
   }
 }

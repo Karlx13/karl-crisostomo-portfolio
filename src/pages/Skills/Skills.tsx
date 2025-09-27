@@ -1,5 +1,7 @@
+import { SectionWrapper } from "@/containers/SectionWrapper";
+
 const Skills = () => {
-  return <div>Skills</div>;
+  return <SectionWrapper>Skills</SectionWrapper>;
 };
 
 export default Skills;

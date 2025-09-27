@@ -1,5 +1,7 @@
+import { SectionWrapper } from "@/containers/SectionWrapper";
+
 const Projects = () => {
-  return <div>Projects </div>;
+  return <SectionWrapper>Projects </SectionWrapper>;
 };
 
 export default Projects;

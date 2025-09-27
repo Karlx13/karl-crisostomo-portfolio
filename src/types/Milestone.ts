@@ -1,6 +1,6 @@
 export interface IMilestone {
   id: number;
-  date: string;
+  date: number;
   title: string;
   company: string;
   description?: string;

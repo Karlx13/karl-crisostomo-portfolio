@@ -1,8 +1,7 @@
 import type { INavLinks } from '@/types';
 
 export const NavLinks: INavLinks[] = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
+  { label: 'About Me', path: '/' },
   {
     label: 'Experiences',
     path: '/experiences',
