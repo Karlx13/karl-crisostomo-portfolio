@@ -1,11 +1,12 @@
-import { ProjectTable } from '@/components';
 import { PROJECT_DETAILS } from '@/constants/Projects';
+import { ProjectTable } from './components';
+import { SectionWrapper } from '@/containers';
 
 const Projects = () => {
   return (
-    <section className="h-dvh flex items-center w-full px-1">
+    <SectionWrapper>
       <ProjectTable projectDetails={PROJECT_DETAILS} />
-    </section>
+    </SectionWrapper>
   );
 };
 

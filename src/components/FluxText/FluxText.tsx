@@ -6,13 +6,13 @@ import { FluxTextAnimation } from '@/animation';
 
 const FluxText = memo<IFluxTextProps>(({ topLabel, bottomLabel }) => (
   <motion.div
-    className="absolute inset-0  justify-between items-center font-bold uppercase px-1"
+    className="absolute inset-0 justify-between items-center font-bold uppercase px-1"
     variants={FluxTextAnimation}
   >
-    <StyledText className="min-[375px]:text-xs sm:text-sm" as="div">
+    <StyledText className="text-sm" as="div">
       {topLabel}
     </StyledText>
-    <StyledText className="min-[375px]:text-xs sm:text-sm" as="div">
+    <StyledText className="text-sm" as="div">
       {bottomLabel}
     </StyledText>
   </motion.div>

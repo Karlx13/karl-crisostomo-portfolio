@@ -6,4 +6,5 @@ export interface IAbout {
 export interface IAboutMeProps {
   className?: string;
   about: IAbout[];
+  title?: string;
 }

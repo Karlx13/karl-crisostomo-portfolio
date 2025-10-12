@@ -19,7 +19,7 @@ const SectionWrapper = ({ children, className, variants, ...props }: ISectionWra
       exit="exit"
       {...props}
       ref={ref}
-      className={cn('h-dvh flex flex-col justify-center items-center', className)}
+      className={cn('min-h-dvh flex flex-col justify-center items-center', className)}
     >
       {children}
     </motion.section>

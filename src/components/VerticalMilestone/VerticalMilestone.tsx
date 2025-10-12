@@ -1,15 +1,36 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState, useRef, useEffect } from 'react';
 import type { IVerticalMileStoneProps } from './VerticalMilestone.types';
 import { TimelineCard } from '../TimelineCard';
 import { motion } from 'motion/react';
 import { cn } from '@/utils';
-import { MileStoneAnimation } from '@/animation';
+import { MileStoneAnimation, TimelineDotAnimation } from '@/animation';
 
 const VerticalMileStone = memo<IVerticalMileStoneProps>(({ milestones }) => {
   const [selectedTimelime, setSelectedTimeline] = useState<number | null>(null);
+  const heightsRef = useRef<Map<number, number>>(new Map()); // Store dynamic heights
+  const [lineHeights, setLineHeights] = useState<Record<number, number>>({});
+
+  useEffect(() => {
+    if (milestones.length > 0) {
+      const latestMilestone = milestones[milestones.length - 1];
+      setSelectedTimeline(latestMilestone.id);
+    }
+  }, [milestones]);
 
   const handleTimelineSelect = useCallback((id: number) => {
     setSelectedTimeline(id);
+  }, []);
+
+  const setHeight = useCallback((id: number, el: HTMLDivElement | null) => {
+    if (!el) return;
+
+    const height = el.getBoundingClientRect().height;
+    const prevHeight = heightsRef.current.get(id);
+
+    if (height !== prevHeight) {
+      heightsRef.current.set(id, height);
+      setLineHeights((prev) => ({ ...prev, [id]: height }));
+    }
   }, []);
 
   return (
@@ -17,6 +38,8 @@ const VerticalMileStone = memo<IVerticalMileStoneProps>(({ milestones }) => {
       <div className="flex flex-col">
         {[...milestones].reverse().map((milestone, idx) => {
           const isTimelineSelected = selectedTimelime === milestone.id;
+          const height = lineHeights[milestone.id] ?? 100; // fallback height
+
           return (
             <motion.div
               variants={MileStoneAnimation}
@@ -26,30 +49,33 @@ const VerticalMileStone = memo<IVerticalMileStoneProps>(({ milestones }) => {
               custom={idx}
               key={milestone.id}
               onClick={() => handleTimelineSelect(milestone.id)}
-              className={cn('flex h-full items-baseline gap-2 relative')}
+              className={cn('flex items-baseline gap-2 relative')}
             >
-              <div className="flex flex-col items-center justify-center ">
-                {/* dot */}
-                <div
+              {/* Timeline dot indicator */}
+              <div className="flex flex-col items-center justify-center">
+                <motion.div
+                  variants={TimelineDotAnimation}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  custom={isTimelineSelected}
                   className={cn(
-                    'w-3.5 h-3.5 z-20 block border-2 border-gray-300 rounded-full outline-1 outline-white hover:bg-black transition-all duration-75  hover:shadow-lg hover:shadow-black',
-                    !selectedTimelime && idx === 0 && 'bg-black',
-                    isTimelineSelected && 'bg-black',
+                    'w-3.5 h-3.5 z-20 border-2 border-white/20 rounded-full outline-1 outline-white/50 shadow-sm cursor-pointer',
+                    !selectedTimelime && idx === 0 && 'bg-black ',
                   )}
                 />
 
-                {/* Vertical line */}
-
+                {/* vertical line  */}
                 <div
-                  className={cn(
-                    'relative w-px bg-gray-300 min-h-[100px]',
-                    idx === milestones.length - 1 &&
-                      'after:absolute after:bottom-0 after:left-0 after:w-full after:h-32 after:bg-gradient-to-t after:from-white after:to-transparent',
-                  )}
+                  style={{ height }}
+                  className={cn('relative w-px bg-white/20 transition-all duration-200')}
                 />
               </div>
 
-              <TimelineCard milestones={milestone} isActive={isTimelineSelected} />
+              {/* measure content height */}
+              <div ref={(el) => setHeight(milestone.id, el)}>
+                <TimelineCard milestones={milestone} isActive={isTimelineSelected} />
+              </div>
             </motion.div>
           );
         })}

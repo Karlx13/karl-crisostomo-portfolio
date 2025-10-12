@@ -6,6 +6,6 @@ const GeneralCard = memo<IGeneralCardProps>(({ className, children }) => (
   <div className={cn('rounded-md w-full border-2 border-gray-400', className)}>{children}</div>
 ));
 
-GeneralCard.displayName = 'BentoCard';
+GeneralCard.displayName = 'GeneralCard';
 
 export default GeneralCard;

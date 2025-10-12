@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Spline+Sans:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
   --font-didot: 'GFS Didot', ui-sans-serif, system-ui, sans-serif;
   --font-press-start-2p: 'Press Start 2P', system-ui;
-
+  --font-spline-sans: 'Spline Sans Mono', monospace;
+  --font-sofia-sans-condensed:'Sofia Sans Condensed', sans-serif;
   /* --color-bg: oklch(0.9931 0.00347 39.4846);  */
   --color-bg: oklch(0.1822 0 0);
   --color-text: oklch(95% 0.02 95);
@@ -23,7 +26,7 @@
     color: var(--color-text);
   }
   html {
-    font-family: var(--font-didot);
+    font-family: var(--font-spline-sans);
   }
   .dark {
     --color-bg: oklch(15% 0.02 250);

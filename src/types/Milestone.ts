@@ -3,7 +3,7 @@ export interface IMilestone {
   date: number;
   title: string;
   company: string;
-  description?: string;
+  achievements?: string;
   technologies?: string[];
   icon?: React.ReactNode;
 }

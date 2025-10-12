@@ -1,43 +1,57 @@
-import { AnimatedText } from '@/components';
+import { AnimatedText, CTAButton } from '@/components';
 import { SectionWrapper } from '@/containers/SectionWrapper';
-import { AboutMe } from './components';
-import { AboutMeData, INTRO_LINES } from '@/constants';
+import { AboutMe, Contact, Expertise } from './components';
+import { ABOUT_ME_DATA, CONTACT_DATA, EXPERTISE_DATA, INTRO_LINES } from '@/constants';
+import { cn } from '@/utils';
+import Resume from '@/assets/pdfs/KARL_CRISOSTOMO_RESUME.pdf';
+import { CTAButtonAnimation } from '@/animation';
 
 const Home = () => {
   return (
     <>
-      {/* <SectionWrapper variants={SectionWrapperAnimation}>
-        <section className="flex flex-col items-center justify-center my-24">
-          <img className="w-[300px] h-[300px] rounded-md bg-gray-400" />a
-          <StyledText className="mt-4 max-w-2xl text-center">Software developer</StyledText>
-        </section>
-
-        <section className="mt-8 relative">
-          <span className="flex gap-2">
-            <MoveDownRight size={18} />
-            <StyledText className="font-semibold"> Scroll down</StyledText>
-          </span>
-
-          <AnimatedText className="uppercase text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-bold tracking-widest">
-            Karl Crisostomo
-          </AnimatedText>
-        </section>
-      </SectionWrapper> */}
-
-      <SectionWrapper className="uppercase font-press-start-2p flex flex-col gap-3">
+      <SectionWrapper>
         {INTRO_LINES.map((text, idx) => (
           <AnimatedText
             once
             key={idx}
-            className="min-[200px]:text-sm min-[400px]:text-base min-[430px]:text-lg md:text-3xl  2xl:text-5xl"
+            className={cn(
+              'text-xs sm:text-lg font-spline-sans font-light',
+              idx === 0 &&
+                'text-5xl sm:text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl font-bold font-sofia-sans-condensed',
+            )}
           >
             {text}
           </AnimatedText>
         ))}
+
+        <CTAButton
+          className="text-sm py-2 px-3 mt-2"
+          variants={CTAButtonAnimation}
+          initial="initial"
+          animate="enter"
+          exit="initial"
+          newTab
+          target={Resume}
+          label="Resume"
+        />
       </SectionWrapper>
 
-      <SectionWrapper className="max-[600px]:mb-24" variants={undefined}>
-        <AboutMe className="text-left  md:max-w-2xl xl:max-w-3xl" about={AboutMeData} />
+      {/* About Section */}
+      <SectionWrapper>
+        <AboutMe
+          className="text-left sm:max-w-md xl:max-w-lg sm:self-center md:self-end"
+          about={ABOUT_ME_DATA}
+        />
+      </SectionWrapper>
+
+      {/* Skills Section */}
+      <SectionWrapper className="flex flex-col items-baseline">
+        <Expertise data={EXPERTISE_DATA} />
+      </SectionWrapper>
+
+      {/* Contact Section */}
+      <SectionWrapper>
+        <Contact data={CONTACT_DATA} />
       </SectionWrapper>
     </>
   );

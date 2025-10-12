@@ -1,0 +1,17 @@
+export const EXPERTISE_DATA = [
+  'C++',
+  'Python',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'React Native',
+  'Vue.js',
+  'NestJS',
+  'TailwindCSS',
+  'Framer Motion',
+  'Sass',
+  'MongoDb',
+  'GitHub Actions',
+  'Android Development',
+];

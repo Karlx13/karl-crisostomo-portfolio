@@ -3,6 +3,7 @@ import type { IFluxButtonProps } from './FluxButton.types';
 import { motion } from 'motion/react';
 import FluxText from '../FluxText/FluxText';
 import { cn } from '@/utils';
+import { ProgressBarAnimation } from '@/animation';
 
 const FluxButton = memo<IFluxButtonProps>(({ topLabel, bottomLabel, onClick, className }) => (
   <motion.button
@@ -17,13 +18,16 @@ const FluxButton = memo<IFluxButtonProps>(({ topLabel, bottomLabel, onClick, cla
     whileTap="active"
     animate="rest"
   >
-    {/* 👻 ghost span only uses the longer label */}
-    <span className="invisible font-bold uppercase  min-[375px]:text-xs sm:text-sm px-1 ">
+    <span className="invisible font-bold uppercase text-sm px-1">
       {topLabel.length >= bottomLabel.length ? topLabel : bottomLabel}
     </span>
 
-    {/* 🎬 animated overlay */}
     <FluxText topLabel={topLabel} bottomLabel={bottomLabel} />
+
+    <motion.div
+      className="absolute bottom-0 left-0 h-[2px] bg-white"
+      variants={ProgressBarAnimation}
+    />
   </motion.button>
 ));
 

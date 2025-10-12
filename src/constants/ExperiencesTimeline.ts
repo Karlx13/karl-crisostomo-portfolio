@@ -1,36 +1,32 @@
 import type { IMilestone } from '@/types';
 
-export const ExperiencesTimeline: IMilestone[] = [
+export const EXPERIENCES_TIMELINE: IMilestone[] = [
   {
     id: 1,
     date: 2023,
     title: 'Front-End Developer Intern',
     company: 'Pixel8  Web Solutions and Consultancy Inc',
-    description: 'Legazpi City, Albay',
-    technologies: ['Python', 'C++'],
+    technologies: ['JavaScript', 'Vue.js', 'Quasar', 'Git actions', 'Gitlabs', 'Bootstrap'],
   },
   {
     id: 2,
     date: 2024,
-    title: 'BS Computer Engineering',
+    title: 'BS Computer Engineering ',
     company: 'PHINMA - University of Pangasinan',
-    description: 'test description',
-    technologies: ['Python', 'Javascript'],
+    technologies: ['C++', 'Python', 'Embedded Systems', 'IoT', 'Hardware'],
   },
   {
     id: 3,
     date: 2024,
-    title: 'Front-End Developer (Project-based)',
+    title: 'Front-End Developer (Contract)',
     company: 'World of Minifigs by Brick Extreme LLC',
-    description: 'test description 2',
-    technologies: ['Python', 'C++'],
+    technologies: ['React + Vite', 'TailwindCSS', 'Nodejs', 'Express.Js'],
   },
   {
     id: 4,
     date: 2024,
     title: 'Junior Front-End Developer',
-    company: 'App bar',
-    description: 'test description 2',
-    technologies: ['Python', 'C++'],
+    company: 'AppBar',
+    technologies: ['React Native', 'Next.Js', 'TypesScript', 'Android Development', 'Bitbucket'],
   },
 ];

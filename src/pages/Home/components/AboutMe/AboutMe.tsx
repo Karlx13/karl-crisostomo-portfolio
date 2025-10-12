@@ -1,7 +1,6 @@
 import { StyledText } from '@/components';
 import type { IAboutMeProps } from './AboutMe.types';
 import { cn, highlightWords } from '@/utils';
-import { Fragment } from 'react';
 import { AboutMeAnimation } from '@/animation';
 import { useAnimationView } from '@/hooks';
 
@@ -23,7 +22,7 @@ const AboutMe = ({ className, about }: IAboutMeProps) => {
           animate={inView ? 'enter' : 'initial'}
           exit="exit"
           key={idx}
-          className="min-[375px]:text-sm min-[430px]:text-base sm:text-xl 2xl:text-base mb-6 tracking-wider leading-9"
+          className="min-[375px]:text-xs md:text-sm  mb-6 tracking-wider leading-9"
         >
           {highlightWords(item.paragraph ?? '').map((part, i) =>
             part.isHighlighted ? (
@@ -31,7 +30,9 @@ const AboutMe = ({ className, about }: IAboutMeProps) => {
                 {part.text}
               </span>
             ) : (
-              <Fragment key={i}>{part.text}</Fragment>
+              <span className="font-light" key={i}>
+                {part.text}
+              </span>
             ),
           )}
         </StyledText>
