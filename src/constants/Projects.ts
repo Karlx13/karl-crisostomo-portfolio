@@ -11,7 +11,7 @@ export const PROJECT_DETAILS: IProjectTableProps['projectDetails'] = [
     category: 'Web Development',
     year: 2025,
     projectContent: {
-      description: `Developed the front end of the external LEGO Builder website linked to the company's main e-commerce platform,
+      description: `Developed the front-end of the external LEGO Builder website linked to the company's main e-commerce platform,
         creating a scalable and maintainable architecture consistent with product standards, contributed to the back end with Express.Js for managing
         LEGO model components.`,
       link: 'https://www.worldofminifigs.com',
@@ -34,7 +34,8 @@ export const PROJECT_DETAILS: IProjectTableProps['projectDetails'] = [
     category: 'Web Development',
     year: 2025,
     projectContent: {
-      description: 'portfolio description',
+      description: `My second portfolio iteration - redesigned and rebuilt from the ground up with a cleaner layout, 
+      smoother animations, and more cohesive design system.`,
       link: '/',
       images: [
         {

@@ -56,7 +56,7 @@ const GeneralTable = <T extends { id: number | string }>({
                 />
                 <motion.div
                   key={idx}
-                  className="flex justify-between w-full relative py-2"
+                  className="flex justify-between w-full relative py-2 cursor-pointer"
                   onClick={() => handleRowClick(idx)}
                   initial={'defaultRest'}
                   whileHover={'popHover'}
@@ -66,7 +66,7 @@ const GeneralTable = <T extends { id: number | string }>({
                   <motion.div
                     variants={bgVariants}
                     transition={{ duration: 0.25, ease: 'easeInOut' }}
-                    className=" absolute inset-0  z-0"
+                    className="absolute inset-0 z-0"
                   />
                   {columns.map((col, idx) => {
                     return (
@@ -77,7 +77,7 @@ const GeneralTable = <T extends { id: number | string }>({
                         initial="initial"
                         animate="enter"
                         className={cn(
-                          ' w-full text-left relative cursor-pointer',
+                          ' w-full text-left relative',
                           idx === 3 && ' text-right w-fit',
                           (idx === 1 || idx === 2) && 'hidden lg:block',
                         )}

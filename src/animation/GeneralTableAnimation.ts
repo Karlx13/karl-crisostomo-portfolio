@@ -19,10 +19,10 @@ export const rowVariants: Variants = {
 
 export const bgVariants: Variants = {
   rest: { backgroundColor: 'transparent', scaleY: 0, originY: 0 },
-  defaultRest: { backgroundColor: 'transparent' },
+  defaultRest: { backgroundColor: 'transparent', filter: 'blur(2px)' },
   popHover: {
     backgroundColor: 'white',
-    transition: { duration: 0.25, ease: 'easeIn' },
+    filter: 'blur(2px)',
   },
   hover: {
     scaleY: 1,
