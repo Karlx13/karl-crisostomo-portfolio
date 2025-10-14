@@ -79,24 +79,22 @@ const Contact = memo<IContactProps>(({ data }) => (
           whileTap="active"
           animate="rest"
         >
-          <div
+          <StyledText
+            as="a"
             key={item.label}
-            className="flex gap-3 group cursor-pointer relative items-center justify-center "
+            href={item.link}
+            target="_blank"
+            className=" uppercase font-bold text-xl md:text-lg flex gap-2 group"
+            rel="noopener noreferrer"
           >
-            <StyledText
-              as="a"
-              href={item.link}
-              target="_blank"
-              className=" uppercase font-bold text-xl md:text-lg"
-              rel="noopener noreferrer"
-            >
-              {item.label}
-            </StyledText>
+            {item.label}
+
             <MoveUpRight
               strokeWidth={2}
               className=" border border-transparent group-active:rotate-45 rotate-12 group-hover:rotate-45 transition-all duration-200"
             />
-          </div>
+          </StyledText>
+
           <div className="relative h-[2px] w-full overflow-hidden">
             {/* Exiting bar (visible first, moves right) */}
             <motion.div

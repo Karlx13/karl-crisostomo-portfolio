@@ -18,15 +18,15 @@ export const EXPERIENCES_TIMELINE: IMilestone[] = [
   {
     id: 3,
     date: 2024,
-    title: 'Front-End Developer (Contract)',
-    company: 'World of Minifigs by Brick Extreme LLC',
-    technologies: ['React + Vite', 'TailwindCSS', 'Nodejs', 'Express.Js'],
-  },
-  {
-    id: 4,
-    date: 2024,
     title: 'Junior Front-End Developer',
     company: 'AppBar',
     technologies: ['React Native', 'Next.Js', 'TypesScript', 'Android Development', 'Bitbucket'],
+  },
+  {
+    id: 4,
+    date: 2025,
+    title: 'Front-End Developer (Part-time)',
+    company: 'World of Minifigs by Brick Extreme LLC',
+    technologies: ['React + Vite', 'TailwindCSS', 'Nodejs', 'Express.Js'],
   },
 ];
