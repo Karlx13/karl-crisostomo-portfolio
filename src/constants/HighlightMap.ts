@@ -1,27 +1,24 @@
 export const HighlightMap: Record<string, string> = {
-  'React.js': 'reactjs',
-  'Next.js': 'nextjs',
-  TypeScript: 'typescript',
-  'React Native': 'reactnative',
+  // Professional
+  'Software Developer': 'software-developer',
+  'enterprise platforms': 'enterprise-platforms',
+  'full-stack business systems': 'full-stack-business-systems',
 
+  // Companies & Applications
   AppBar: 'appbar',
+  HUMA: 'huma',
   AXA: 'axa',
-  'AXA HUMA': 'axa-huma',
-  'AXA PerksBar CMS': 'axa-perksbar-cms',
-  CMS: 'cms',
+  'AIA ONE': 'aia-one',
+  AIA: 'aia',
 
-  Phaser: 'phaser',
-  'Three.js': 'threejs',
-  WebGL: 'webgl',
-  PeerJS: 'peerjs',
-  'iPad-to-display': 'ipad-to-display',
+  // Workstream Billing System
+  'Workstream Billing System': 'workstream-billing-system',
+  'billing and accounting platform': 'billing-accounting-platform',
+  'BPO operations': 'bpo-operations',
 
-  'Brick Extreme LLC': 'brick-extreme-llc',
-  'World of Minifigs Builder': 'world-of-minifigs-builder',
-  LEGO: 'lego',
-  'e-commerce platform': 'e-commerce-platform',
-
-  'clean architecture': 'clean-architecture',
-  'reusable components': 'reusable-components',
-  'API-driven interfaces': 'api-driven-interfaces',
+  // Engineering
+  'employee engagement applications': 'employee-engagement-applications',
+  'client billing': 'client-billing',
+  'financial adjustments': 'financial-adjustments',
+  'reliable software': 'reliable-software',
 };

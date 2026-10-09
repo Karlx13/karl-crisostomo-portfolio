@@ -3,7 +3,7 @@ import { SectionWrapper } from '@/containers/SectionWrapper';
 import { AboutMe, Contact, Expertise } from './components';
 import { ABOUT_ME_DATA, CONTACT_DATA, EXPERTISE_DATA, INTRO_LINES } from '@/constants';
 import { cn } from '@/utils';
-import Resume from '@/assets/pdfs/KARL_MICHAEL_CRISOSTOMO_RESUME.pdf';
+import Resume from '@/assets/pdfs/KARL_CRISOSTOMO_RESUME.pdf';
 import { CTAButtonAnimation } from '@/animation';
 
 const Home = () => {
