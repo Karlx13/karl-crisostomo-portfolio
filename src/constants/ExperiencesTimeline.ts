@@ -4,7 +4,7 @@ export const EXPERIENCES_TIMELINE: IMilestone[] = [
   {
     id: 1,
     date: 2023,
-    title: 'Front-End Developer Intern',
+    title: 'Front-end Developer Intern',
     company: 'Pixel8  Web Solutions and Consultancy Inc',
     technologies: ['JavaScript', 'Vue.js', 'Quasar', 'Git actions', 'Gitlabs', 'Bootstrap'],
   },
@@ -13,7 +13,14 @@ export const EXPERIENCES_TIMELINE: IMilestone[] = [
     date: 2024,
     title: 'BS Computer Engineering ',
     company: 'PHINMA - University of Pangasinan',
-    technologies: ['C++', 'Python', 'Embedded Systems', 'IoT', 'Hardware'],
+    technologies: [
+      'C++',
+      'Python',
+      'Embedded Systems',
+      'IoT',
+      'Hardware Engineering',
+      'Web Development',
+    ],
   },
   {
     id: 3,
