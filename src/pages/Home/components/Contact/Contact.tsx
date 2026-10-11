@@ -37,7 +37,10 @@ interface IContactProps {
 
 const Contact = memo<IContactProps>(({ data }) => (
   <>
-    <AnimatedText className="uppercase text-left text-3xl md:text-4xl xl:text-6xl mb-24 font-bold">
+    <AnimatedText
+      once
+      className="uppercase text-left text-3xl md:text-4xl xl:text-6xl mb-24 font-bold"
+    >
       Contact
     </AnimatedText>
 

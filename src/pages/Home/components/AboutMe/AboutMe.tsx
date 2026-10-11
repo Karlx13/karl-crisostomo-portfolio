@@ -7,8 +7,11 @@ import { useAnimationView } from '@/hooks';
 const AboutMe = ({ className, about }: IAboutMeProps) => {
   const { ref, inView } = useAnimationView({
     options: {
-      once: false,
-      amount: 0.4,
+      // Keep the content revealed once it has entered the viewport. Resetting
+      // the animation during a fast scroll can otherwise leave this section
+      // in its hidden state after the observer threshold is crossed.
+      once: true,
+      amount: 0.1,
     },
   });
 

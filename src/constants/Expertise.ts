@@ -8,7 +8,7 @@ export const EXPERTISE_DATA = [
   'Vite',
   'TailwindCSS',
   'Sass',
-  'XCode',
+  'Xcode',
   'TanStack Query',
   'REST APIs',
   'Node.js',
